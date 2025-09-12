@@ -1,0 +1,5 @@
+[include]
+path = ./rapidfsub.inc
+
+[includeIf "gitdir:~/devall/"]
+path = ./devall.inc

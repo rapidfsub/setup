@@ -1,0 +1,29 @@
+version: "3"
+
+includes:
+  brew:
+    taskfile: ./taskfiles/brew.yaml
+    aliases: [b]
+
+  chezmoi:
+    taskfile: ./taskfiles/chezmoi.yaml
+    aliases: [c]
+
+  nix:
+    taskfile: ./taskfiles/nix.yaml
+    aliases: [n]
+
+  ssh:
+    taskfile: ./taskfiles/ssh.yaml
+    aliases: [s]
+
+  # vscode:
+  #   taskfile: ./taskfiles/vscode.yaml
+  #   aliases: [vs]
+
+tasks:
+  setup:
+    aliases: [s]
+    cmds:
+      - task: chezmoi:apply
+      - task: brew:bundle

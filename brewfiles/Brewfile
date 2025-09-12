@@ -1,0 +1,5 @@
+brew "asdf"
+brew "mas"
+cask "firefox"
+cask "ghostty"
+cask "visual-studio-code"
