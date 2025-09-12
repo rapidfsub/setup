@@ -1,0 +1,172 @@
+{
+  description = "Example nix-darwin system flake";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+    let
+      configuration = { pkgs, ... }: {
+        # List packages installed in system profile. To search by name, run:
+        # $ nix-env -qaP | grep wget
+        environment.systemPackages = with pkgs; [
+          bat
+          bottom
+          chezmoi
+          cloc
+          cloudflared
+          exercism
+          fd
+          fish
+          flyctl
+          fzf
+          gh
+          ghostscript
+          go-task
+          just
+          nmap
+          pandoc
+          railway
+          ripgrep
+          sd
+          shfmt
+          zoxide
+          zsh-autocomplete
+
+          # nix
+          nil
+          nixpkgs-fmt
+
+          # data format
+          jq
+          yq
+
+          # git
+          git-delete-merged-branches
+          git-lfs
+          lazygit
+
+          # env
+          direnv
+          dotenvx
+
+          # network
+          dnstop
+          doggo
+        ];
+
+        # Necessary for using flakes on this system.
+        nix.settings.experimental-features = "nix-command flakes";
+
+        # Enable alternative shell support in nix-darwin.
+        # programs.fish.enable = true;
+
+        # Set Git commit hash for darwin-version.
+        system.configurationRevision = self.rev or self.dirtyRev or null;
+
+        # Used for backwards compatibility, please read the changelog before changing.
+        # $ darwin-rebuild changelog
+        system.stateVersion = 5;
+
+        # The platform the configuration will be used on.
+        nixpkgs.hostPlatform = "aarch64-darwin";
+
+        ### added
+        environment.shellAliases = {
+          lg = "lazygit";
+          t = "task";
+          vsc = "cursor";
+          mix_env = "echo \"MIX_ENV=$MIX_ENV\"";
+          emd = "export MIX_ENV=dev; mix_env";
+          emt = "export MIX_ENV=test; mix_env";
+        };
+
+        security.pam.enableSudoTouchIdAuth = true;
+
+        launchd = {
+          user = {
+            agents = builtins.mapAttrs (key: agent: agent // { serviceConfig.RunAtLoad = true; }) {
+              linearMouse.command = "open -a LinearMouse.app";
+              postgres.command = "open -a Postgres.app";
+            };
+          };
+        };
+
+        system.defaults.NSGlobalDomain = {
+          AppleICUForce24HourTime = true;
+          ApplePressAndHoldEnabled = false;
+          AppleShowAllExtensions = true;
+          # from 15 to 120
+          InitialKeyRepeat = 15;
+          # from 2 to 120
+          KeyRepeat = 1;
+          NSAutomaticCapitalizationEnabled = false;
+          NSAutomaticDashSubstitutionEnabled = false;
+          NSAutomaticPeriodSubstitutionEnabled = false;
+          NSAutomaticSpellingCorrectionEnabled = false;
+        };
+
+        system.defaults.dock = {
+          autohide = true;
+          mru-spaces = false;
+          orientation = "left";
+          persistent-apps = [ ];
+          persistent-others = [ ];
+          show-process-indicators = false;
+          show-recents = false;
+          showhidden = true;
+          static-only = true;
+          tilesize = 48;
+        };
+
+        system.defaults.CustomUserPreferences = {
+          "~/Library/Preferences/ByHost/com.apple.controlcenter.plist" = {
+            AccessibilityShortcuts = 9;
+            AirDrop = 24;
+            Battery = 9;
+            BatteryShowPercentage = 0;
+            Bluetooth = 8;
+            Display = 8;
+            FocusModes = 8;
+            Hearing = 9;
+            KeyboardBrightness = 9;
+            MusicRecognition = 9;
+            NowPlaying = 8;
+            ScreenMirroring = 8;
+            Sound = 8;
+            StageManager = 8;
+            UserSwitcher = 9;
+            WiFi = 24;
+          };
+
+          "~/Library/Preferences/ByHost/com.apple.Spotlight.plist" = {
+            MenuItemHidden = 1;
+          };
+
+          # defaults read com.apple.symbolichotkeys
+          "com.apple.symbolichotkeys".AppleSymbolicHotKeys = {
+            ## Launchpad & Dock
+            ### Turn Dock hiding on/off
+            "52".enabled = 0;
+
+            ## Input Sources
+            ### Select the previous input source
+            "60".enabled = 1;
+
+            ### Select next source inInput menu
+            "61".enabled = 0;
+          };
+        };
+      };
+    in
+    {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#simple
+      darwinConfigurations."simple" = nix-darwin.lib.darwinSystem {
+        modules = [ configuration ];
+      };
+    };
+}
