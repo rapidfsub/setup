@@ -2,23 +2,23 @@ version: "3"
 
 includes:
   brew:
-    taskfile: ./taskfiles/brew.yaml
+    taskfile: ~/setup/taskfiles/brew.yaml
     aliases: [b]
 
   chezmoi:
-    taskfile: ./taskfiles/chezmoi.yaml
+    taskfile: ~/setup/taskfiles/chezmoi.yaml
     aliases: [c]
 
   nix:
-    taskfile: ./taskfiles/nix.yaml
+    taskfile: ~/setup/taskfiles/nix.yaml
     aliases: [n]
 
   ssh:
-    taskfile: ./taskfiles/ssh.yaml
+    taskfile: ~/setup/taskfiles/ssh.yaml
     aliases: [s]
 
   # vscode:
-  #   taskfile: ./taskfiles/vscode.yaml
+  #   taskfile: ~/setup/taskfiles/vscode.yaml
   #   aliases: [vs]
 
 tasks:
