@@ -1,0 +1,7 @@
+version: "3"
+
+tasks:
+  keygen:
+    aliases: [kg]
+    cmds:
+      - ssh-keygen -t ed25519 -C "{{.CLI_ARGS}}"

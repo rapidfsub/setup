@@ -1,0 +1,13 @@
+version: "3"
+
+tasks:
+  switch:
+    aliases: [s]
+    cmds:
+      - sudo darwin-rebuild switch --flake .#simple
+
+  update:
+    aliases: [u]
+    cmds:
+      - nix flake update
+      - task: switch
