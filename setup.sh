@@ -11,9 +11,13 @@ else
   exit 1
 fi
 
-# rosetta
 if [[ "$(uname -m)" == "arm64" ]]; then
   softwareupdate --install-rosetta --agree-to-license &>/dev/null || true
+  BREW=/opt/homebrew/bin/brew
+  NIX_HOST=simple
+else
+  BREW=/usr/local/bin/brew
+  NIX_HOST=x86
 fi
 
 # nix
@@ -28,17 +32,11 @@ if ! command -v nix &>/dev/null; then
 fi
 
 # nix-darwin
-sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#simple
+sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#$NIX_HOST
 set +u
 . /etc/bashrc
 
 # homebrew
-if [[ "$(uname -m)" == "arm64" ]]; then
-  BREW=/opt/homebrew/bin/brew
-else
-  BREW=/usr/local/bin/brew
-fi
-
 if [[ -f $BREW ]]; then
   echo "homebrew already installed"
 else

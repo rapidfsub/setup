@@ -10,11 +10,10 @@
   };
 
   outputs =
-    {
-      self,
-      home-manager,
-      nix-darwin,
-      ...
+    { self
+    , home-manager
+    , nix-darwin
+    , ...
     }:
     let
       darwinSystem =
@@ -54,6 +53,11 @@
     {
       darwinConfigurations.simple = darwinSystem {
         system = "aarch64-darwin";
+        user = "minsub";
+      };
+
+      darwinConfigurations.x86 = darwinSystem {
+        system = "x86_64-darwin";
         user = "minsub";
       };
     };
