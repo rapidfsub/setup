@@ -1,0 +1,28 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "command": "cursorai.action.generateInTerminal",
+    "key": "shift+cmd+k",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "command": "-aichat.insertselectionintochat",
+    "key": "shift+cmd+l"
+  },
+  {
+    "command": "-aipopup.action.modal.generate",
+    "key": "cmd+k"
+  },
+  {
+    "command": "-workbench.action.chat.openEditSession",
+    "key": "shift+cmd+i"
+  },
+  {
+    "command": "-composer.newAgentChat",
+    "key": "shift+cmd+i"
+  },
+  {
+    "command": "-cursorai.action.generateInTerminal",
+    "key": "cmd+k"
+  }
+]
