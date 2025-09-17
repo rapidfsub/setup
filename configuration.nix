@@ -1,15 +1,16 @@
-{ self
-, system
-, user
-, home
-, pkgs
-, ...
+{
+  self,
+  system,
+  user,
+  home,
+  pkgs,
+  ...
 }:
 
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
     chezmoi
     go-task
     nixd

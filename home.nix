@@ -1,8 +1,9 @@
-{ config
-, pkgs
-, user
-, home
-, ...
+{
+  # config,
+  # pkgs,
+  user,
+  home,
+  ...
 }:
 
 {

@@ -25,22 +25,7 @@
   "html.format.indentInnerHtml": true,
   "html.format.maxPreserveNewLines": 1,
   "nix.enableLanguageServer": true,
-  "nix.serverPath": "nil",
-  "nix.serverSettings": {
-    "nil": {
-      "diagnostics": {
-        "ignored": [
-          "unused_binding",
-          "unused_with"
-        ]
-      },
-      "formatting": {
-        "command": [
-          "nixpkgs-fmt"
-        ]
-      }
-    }
-  },
+  "nix.serverPath": "nixd",
   "redhat.telemetry.enabled": false,
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.scrollback": 1000000,

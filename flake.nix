@@ -10,10 +10,11 @@
   };
 
   outputs =
-    { self
-    , home-manager
-    , nix-darwin
-    , ...
+    {
+      self,
+      home-manager,
+      nix-darwin,
+      ...
     }:
     let
       darwinSystem =
