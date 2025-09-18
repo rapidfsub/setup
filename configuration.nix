@@ -12,9 +12,14 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     chezmoi
+    dotenvx
+    fd
     go-task
+    git-delete-merged-branches
+    git-lfs
     nixd
     nixfmt
+    ripgrep
     yq
   ];
 
