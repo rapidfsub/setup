@@ -4,7 +4,7 @@ tasks:
   switch:
     aliases: [s]
     cmds:
-      - sudo darwin-rebuild switch --flake .#simple
+      - sudo darwin-rebuild switch --flake .#$(uname -m)
 
   update:
     aliases: [u]

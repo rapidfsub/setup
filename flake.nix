@@ -52,12 +52,12 @@
         };
     in
     {
-      darwinConfigurations.simple = darwinSystem {
+      darwinConfigurations.arm64 = darwinSystem {
         system = "aarch64-darwin";
         user = "minsub";
       };
 
-      darwinConfigurations.x86 = darwinSystem {
+      darwinConfigurations.x86_64 = darwinSystem {
         system = "x86_64-darwin";
         user = "minsub";
       };
