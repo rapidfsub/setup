@@ -3,25 +3,14 @@
   system,
   user,
   home,
-  pkgs,
+  # pkgs,
   ...
 }:
 
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
-    chezmoi
-    dotenvx
-    fd
-    go-task
-    git-delete-merged-branches
-    git-lfs
-    nixd
-    nixfmt
-    ripgrep
-    yq
-  ];
+  environment.systemPackages = [ ];
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
@@ -43,15 +32,4 @@
   users.users.${user}.home = home;
   programs.fish.enable = true;
   security.pam.services.sudo_local.touchIdAuth = true;
-
-  environment = {
-    shellInit = ''
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    '';
-
-    shellAliases = {
-      lg = "lazygit";
-      t = "task";
-    };
-  };
 }

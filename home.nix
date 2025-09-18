@@ -1,6 +1,6 @@
 {
   # config,
-  # pkgs,
+  pkgs,
   user,
   home,
   ...
@@ -25,25 +25,39 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  home.packages = with pkgs; [
+    asdf-vm
+    chezmoi
+    dotenvx
+    fd
+    go-task
+    git-delete-merged-branches
+    git-lfs
+    nixd
+    nixfmt
+    ripgrep
+    yq
+  ];
+
+  home.shellAliases = {
+    lg = "lazygit";
+    t = "task";
+  };
+
   programs.direnv.enable = true;
   programs.lazygit.enable = true;
 
   programs.fish = {
     enable = true;
     shellInitLast = ''
-      # ASDF configuration code
-      if test -z $ASDF_DATA_DIR
-          set _asdf_shims "$HOME/.asdf/shims"
+      if test "$(uname -m)" = "arm64"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
       else
-          set _asdf_shims "$ASDF_DATA_DIR/shims"
+        eval "$(/usr/local/bin/brew shellenv)"
       end
 
-      # Do not use fish_add_path (added in Fish 3.2) because it
-      # potentially changes the order of items in PATH
-      if not contains $_asdf_shims $PATH
-          set -gx --prepend PATH $_asdf_shims
-      end
-      set --erase _asdf_shims
+      . "${pkgs.asdf-vm}/share/asdf-vm/asdf.fish"
+      . "${pkgs.asdf-vm}/share/fish/vendor_completions.d/asdf.fish"
     '';
   };
 
