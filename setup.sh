@@ -11,15 +11,11 @@ else
   exit 1
 fi
 
-xcode-select --install &>/dev/null || true
-
 if [[ "$(uname -m)" == "arm64" ]]; then
   softwareupdate --install-rosetta --agree-to-license &>/dev/null || true
   BREW=/opt/homebrew/bin/brew
-  NIX_HOST=simple
 else
   BREW=/usr/local/bin/brew
-  NIX_HOST=x86
 fi
 
 # nix
@@ -34,7 +30,7 @@ if ! command -v nix &>/dev/null; then
 fi
 
 # nix-darwin
-sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#$NIX_HOST
+sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#$(uname -m)
 set +u
 . /etc/bashrc
 
