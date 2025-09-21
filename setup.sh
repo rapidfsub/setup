@@ -11,6 +11,8 @@ else
   exit 1
 fi
 
+xcode-select --install &>/dev/null || true
+
 if [[ "$(uname -m)" == "arm64" ]]; then
   softwareupdate --install-rosetta --agree-to-license &>/dev/null || true
   BREW=/opt/homebrew/bin/brew
