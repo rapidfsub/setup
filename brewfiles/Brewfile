@@ -1,4 +1,6 @@
 brew "mas"
 cask "firefox"
 cask "ghostty"
+cask "google-chrome"
+cask "postgres-unofficial"
 cask "visual-studio-code"
