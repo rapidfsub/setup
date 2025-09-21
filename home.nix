@@ -30,6 +30,7 @@
     chezmoi
     dotenvx
     fd
+    flyctl
     go-task
     git-delete-merged-branches
     git-lfs
