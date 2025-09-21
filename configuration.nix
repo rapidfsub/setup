@@ -32,4 +32,18 @@
   users.users.${user}.home = home;
   programs.fish.enable = true;
   security.pam.services.sudo_local.touchIdAuth = true;
+  system.primaryUser = user;
+
+  system.defaults.dock = {
+    autohide = true;
+    mru-spaces = false;
+    orientation = "left";
+    persistent-apps = [ ];
+    persistent-others = [ ];
+    show-process-indicators = false;
+    show-recents = false;
+    showhidden = true;
+    static-only = true;
+    tilesize = 48;
+  };
 }
