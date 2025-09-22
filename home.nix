@@ -45,6 +45,10 @@
     t = "task";
   };
 
+  home.sessionPath = [
+    "/Applications/Postgres.app/Contents/Versions/latest/bin"
+  ];
+
   programs.direnv.enable = true;
   programs.lazygit.enable = true;
 
