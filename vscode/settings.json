@@ -1,10 +1,18 @@
 {
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
   "diffEditor.codeLens": true,
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.insertSpaces": true,
   "editor.minimap.enabled": false,
+  "editor.snippetSuggestions": "inline",
   "editor.suggestSelection": "recentlyUsed",
   "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "editor.wordBasedSuggestions": "off",
   "emmet.includeLanguages": {
     "elixir": "html",
     "phoenix-heex": "html"
@@ -20,7 +28,6 @@
   "files.saveConflictResolution": "overwriteFileOnDisk",
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "geminicodeassist.project": "",
   "git.openRepositoryInParentFolders": "always",
   "html.format.indentInnerHtml": true,
   "html.format.maxPreserveNewLines": 1,
