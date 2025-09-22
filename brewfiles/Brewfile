@@ -1,4 +1,5 @@
 brew "mas"
+cask "ferdium"
 cask "firefox"
 cask "ghostty"
 cask "google-chrome"
