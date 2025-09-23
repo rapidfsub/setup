@@ -1,4 +1,5 @@
 brew "mas"
+cask "1password"
 cask "ferdium"
 cask "firefox"
 cask "ghostty"
