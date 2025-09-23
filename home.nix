@@ -31,6 +31,7 @@
     dotenvx
     fd
     flyctl
+    ghostscript
     go-task
     git-delete-merged-branches
     git-lfs
