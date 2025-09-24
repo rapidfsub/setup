@@ -1,6 +1,8 @@
 brew "asdf"
 brew "mas"
+brew "typos-cli"
 cask "1password"
+cask "cursor"
 cask "firefox"
 cask "ghostty"
 cask "google-chrome"
