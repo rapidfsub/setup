@@ -26,7 +26,6 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    asdf-vm
     chezmoi
     dotenvx
     fd
@@ -56,14 +55,7 @@
   programs.fish = {
     enable = true;
     shellInitLast = ''
-      if test "$(uname -m)" = "arm64"
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-      else
-        eval "$(/usr/local/bin/brew shellenv)"
-      end
-
-      . "${pkgs.asdf-vm}/share/asdf-vm/asdf.fish"
-      . "${pkgs.asdf-vm}/share/fish/vendor_completions.d/asdf.fish"
+      . $HOME/.config/fish/init_last.fish
     '';
   };
 
