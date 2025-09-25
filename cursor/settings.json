@@ -1,0 +1,40 @@
+{
+  "[elixir]": {
+    "editor.defaultFormatter": "elixir-lsp.elixir-ls"
+  },
+  "diffEditor.codeLens": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.insertSpaces": true,
+  "editor.minimap.enabled": false,
+  "editor.snippetSuggestions": "inline",
+  "editor.suggestSelection": "recentlyUsed",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "editor.wordBasedSuggestions": "off",
+  "emmet.includeLanguages": {
+    "elixir": "html",
+    "phoenix-heex": "html"
+  },
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.heex": "phoenix-heex",
+    "*.mjml.eex": "mjml"
+  },
+  "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true,
+  "files.saveConflictResolution": "overwriteFileOnDisk",
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.openRepositoryInParentFolders": "always",
+  "html.format.indentInnerHtml": true,
+  "html.format.maxPreserveNewLines": 1,
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
+  "redhat.telemetry.enabled": false,
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.scrollback": 1000000,
+  "workbench.colorTheme": "Default Dark+"
+}
