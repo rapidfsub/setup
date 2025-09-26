@@ -1,0 +1,38 @@
+version: "3"
+
+tasks:
+  phx.server:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mps]
+    cmds:
+      - mix phx.server
+
+  test:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mt]
+    cmds:
+      - mix test
+
+  format:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mf]
+    cmds:
+      - mix format
+
+  compile-force:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mcf]
+    cmds:
+      - mix compile --force
+
+  iex-mix:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [im]
+    cmds:
+      - iex -S mix
+
+  iex-phx.server:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [imps]
+    cmds:
+      - iex -S mix phx.server

@@ -26,6 +26,10 @@ includes:
   #   aliases: [vs]
   #   dir: ~/setup
 
+  mix:
+    taskfile: ~/setup/taskfiles/mix.yaml
+    flatten: true
+
 tasks:
   setup:
     aliases: [s]
