@@ -51,6 +51,7 @@
 
   programs.direnv.enable = true;
   programs.lazygit.enable = true;
+  programs.tealdeer.enable = true;
 
   programs.fish = {
     enable = true;
