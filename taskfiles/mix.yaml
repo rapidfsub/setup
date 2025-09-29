@@ -1,6 +1,25 @@
 version: "3"
 
 tasks:
+  compile-force:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mcf]
+    cmds:
+      - mix compile --force
+
+  deps.get:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mdg]
+    cmds:
+      - test -d deps && rm -f deps/* &>/dev/null || true
+      - mix deps.get
+
+  format:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mf]
+    cmds:
+      - mix format
+
   phx.server:
     dir: "{{.USER_WORKING_DIR}}"
     aliases: [mps]
@@ -12,18 +31,6 @@ tasks:
     aliases: [mt]
     cmds:
       - mix test
-
-  format:
-    dir: "{{.USER_WORKING_DIR}}"
-    aliases: [mf]
-    cmds:
-      - mix format
-
-  compile-force:
-    dir: "{{.USER_WORKING_DIR}}"
-    aliases: [mcf]
-    cmds:
-      - mix compile --force
 
   iex-mix:
     dir: "{{.USER_WORKING_DIR}}"
