@@ -1,6 +1,5 @@
 brew "asdf"
 brew "mas"
-brew "typos-cli"
 cask "1password"
 cask "anki"
 cask "cursor"
