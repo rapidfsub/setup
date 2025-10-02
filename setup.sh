@@ -1,22 +1,17 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+sudo -v
 
-if sudo -v; then
-  while sleep 30; do sudo -n true &>/dev/null; done &
-  KEEPALIVE_PID=$!
-  trap "kill $KEEPALIVE_PID &>/dev/null || true" EXIT
-else
-  echo "sudo required"
-  exit 1
-fi
-
+# rosetta
 if [[ "$(uname -m)" == "arm64" ]]; then
   softwareupdate --install-rosetta --agree-to-license &>/dev/null || true
   BREW=/opt/homebrew/bin/brew
 else
   BREW=/usr/local/bin/brew
 fi
+
+sudo -v
 
 # nix
 if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
@@ -29,10 +24,13 @@ if ! command -v nix &>/dev/null; then
   . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 fi
 
+sudo -v
+
 # nix-darwin
 sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#$(uname -m)
 set +u
 . /etc/bashrc
+sudo -v
 
 # homebrew
 if [[ -f $BREW ]]; then
