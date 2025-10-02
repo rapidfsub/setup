@@ -1,6 +1,12 @@
 version: "3"
 
 tasks:
+  compile:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mc]
+    cmds:
+      - mix compile
+
   compile-force:
     dir: "{{.USER_WORKING_DIR}}"
     aliases: [mcf]
@@ -36,10 +42,10 @@ tasks:
     dir: "{{.USER_WORKING_DIR}}"
     aliases: [im]
     cmds:
-      - iex -S mix
+      - iex --name test@::1 --cookie mycookie -S mix
 
   iex-phx.server:
     dir: "{{.USER_WORKING_DIR}}"
     aliases: [imps]
     cmds:
-      - iex -S mix phx.server
+      - iex --name test@::1 --cookie mycookie -S mix phx.server

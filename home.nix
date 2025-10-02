@@ -49,14 +49,16 @@
     "/Applications/Postgres.app/Contents/Versions/latest/bin"
   ];
 
+  programs.btop.enable = true;
   programs.direnv.enable = true;
   programs.lazygit.enable = true;
   programs.tealdeer.enable = true;
 
   programs.fish = {
     enable = true;
+
     shellInitLast = ''
-      . $HOME/.config/fish/init_last.fish
+      . $HOME/.config/fish/shell_init_last.fish
     '';
   };
 
