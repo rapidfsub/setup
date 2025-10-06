@@ -11,3 +11,10 @@ tasks:
     cmds:
       - nix flake update
       - task: switch
+
+  collect-garbage:
+    aliases: [gc]
+    cmds:
+      - nix-env --delete-generations old
+      - nix-store --gc
+      - nix-collect-garbage -d
