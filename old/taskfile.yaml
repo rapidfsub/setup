@@ -1,0 +1,36 @@
+version: "3"
+
+includes:
+  brew:
+    taskfile: ./taskfiles/brew.yaml
+    aliases: [b]
+
+  chezmoi:
+    taskfile: ./taskfiles/chezmoi.yaml
+    aliases: [c]
+
+  nix:
+    taskfile: ./taskfiles/nix.yaml
+    aliases: [n]
+
+  vfox:
+    taskfile: ./taskfiles/vfox.yaml
+    aliases: [v]
+
+  vscode:
+    taskfile: ./taskfiles/vscode.yaml
+    aliases: [vs]
+
+  yes24:
+    taskfile: ./taskfiles/yes24.yaml
+    aliases: [y]
+
+tasks:
+  setup:
+    aliases: [s]
+    cmds:
+      - task: chezmoi:apply
+      - task: brew:bundle
+      - task: vfox:install-all
+      - task: vscode:sync
+      - task: yes24:download

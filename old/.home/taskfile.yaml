@@ -1,0 +1,69 @@
+version: "3"
+
+tasks:
+  iex-source-mix:
+    aliases: [ism]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - iex -S mix
+
+  mix-deps-get:
+    aliases: [mdg]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - mix deps.get
+
+  mix-deps-compile:
+    aliases: [mdc]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - mix deps.compile {{.CLI_ARGS}}
+
+  mix-deps-clean-get:
+    aliases: [mdcg]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - mix deps.clean {{.CLI_ARGS}}
+      - mix deps.get
+
+  mix-deps-update:
+    aliases: [mdu]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - mix deps.update {{.CLI_ARGS}}
+
+  mix-ecto-reset:
+    aliases: [mer]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - mix ecto.reset
+
+  mix-phx-server:
+    aliases: [mps]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - mix phx.server
+
+  mix-test:
+    aliases: [mt]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - mix test
+
+  mix-compile:
+    aliases: [mc]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - mix compile
+
+  mix-compile-force:
+    aliases: [mcf]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - mix compile --force
+
+  mix-compile-verbose:
+    aliases: [mcv]
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - mix compile --verbose

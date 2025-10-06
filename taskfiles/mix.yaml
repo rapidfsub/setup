@@ -1,0 +1,65 @@
+version: "3"
+
+tasks:
+  compile:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mc]
+    cmds:
+      - mix compile
+
+  compile-force:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mcf]
+    cmds:
+      - mix compile --force
+
+  deps.compile:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mdc]
+    cmds:
+      - mix deps.compile {{.CLI_ARGS}}
+
+  deps.clean-get-compile:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mdgg]
+    cmds:
+      - mix deps.clean {{.CLI_ARGS}}
+      - mix deps.get {{.CLI_ARGS}}
+      - mix deps.compile {{.CLI_ARGS}}
+
+  deps.get:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mdg]
+    cmds:
+      - test -d deps && rm -f deps/* &>/dev/null || true
+      - mix deps.get
+
+  format:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mf]
+    cmds:
+      - mix format
+
+  phx.server:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mps]
+    cmds:
+      - mix phx.server
+
+  test:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [mt]
+    cmds:
+      - mix test
+
+  iex-mix:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [im]
+    cmds:
+      - iex --name test@::1 --cookie mycookie -S mix
+
+  iex-phx.server:
+    dir: "{{.USER_WORKING_DIR}}"
+    aliases: [imps]
+    cmds:
+      - iex --name test@::1 --cookie mycookie -S mix phx.server
