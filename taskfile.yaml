@@ -21,6 +21,11 @@ includes:
     aliases: [s]
     dir: ~/setup
 
+  r:
+    taskfile: ~/setup/taskfiles/r.yaml
+    aliases: [r]
+    dir: ~/setup
+
   # vscode:
   #   taskfile: ~/setup/taskfiles/vscode.yaml
   #   aliases: [vs]

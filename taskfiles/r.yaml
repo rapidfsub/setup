@@ -1,0 +1,7 @@
+version: "3"
+
+tasks:
+  install:
+    aliases: [i]
+    cmds:
+      - Rscript ~/setup/rscripts/packages.R

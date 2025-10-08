@@ -4,4 +4,4 @@ tasks:
   apply:
     aliases: [a]
     cmds:
-      - chezmoi apply --source=./chezmoi --force
+      - chezmoi apply --source=~/setup/chezmoi --force

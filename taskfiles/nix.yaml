@@ -4,12 +4,12 @@ tasks:
   switch:
     aliases: [s]
     cmds:
-      - sudo darwin-rebuild switch --flake .#$(uname -m)
+      - sudo darwin-rebuild switch --flake ~/setup/nix#$(uname -m)
 
   update:
     aliases: [u]
     cmds:
-      - nix flake update
+      - nix flake update --flake ~/setup/nix
       - task: switch
 
   collect-garbage:
