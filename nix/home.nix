@@ -31,14 +31,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.shellAliases = {
-    em = "echo \"MIX_ENV=$MIX_ENV\"";
-    emd = "export MIX_ENV=dev && em";
-    emt = "export MIX_ENV=test && em";
-    lg = "lazygit";
-    t = "task";
-  };
-
   home.sessionPath = [
     "/Applications/Postgres.app/Contents/Versions/latest/bin"
   ];
