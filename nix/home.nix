@@ -1,12 +1,18 @@
 {
   # config,
-  pkgs,
+  # pkgs,
   user,
   home,
+  platform,
   ...
 }:
 
 {
+  imports = [
+    ./home/packages.nix
+    ./home/${platform}.nix
+  ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = user;
@@ -24,22 +30,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  home.packages = with pkgs; [
-    chezmoi
-    dotenvx
-    fd
-    flyctl
-    gdu
-    ghostscript
-    go-task
-    git-delete-merged-branches
-    git-lfs
-    nixd
-    nixfmt
-    ripgrep
-    yq
-  ];
 
   home.shellAliases = {
     em = "echo \"MIX_ENV=$MIX_ENV\"";

@@ -18,7 +18,11 @@
     }:
     let
       darwinSystem =
-        { system, user }:
+        {
+          system,
+          user,
+          platform,
+        }:
         let
           home = /Users/${user};
         in
@@ -36,7 +40,7 @@
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
               home-manager.extraSpecialArgs = {
-                inherit user home;
+                inherit user home platform;
               };
             }
           ];
@@ -55,11 +59,13 @@
       darwinConfigurations.arm64 = darwinSystem {
         system = "aarch64-darwin";
         user = "minsub";
+        platform = "arm64";
       };
 
       darwinConfigurations.x86_64 = darwinSystem {
         system = "x86_64-darwin";
         user = "minsub";
+        platform = "x86_64";
       };
     };
 }
