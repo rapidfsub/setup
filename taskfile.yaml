@@ -26,6 +26,11 @@ includes:
     aliases: [r]
     dir: ~/setup
 
+  yes24:
+    taskfile: ~/setup/taskfiles/yes24.yaml
+    aliases: [y]
+    dir: ~/setup
+
   # vscode:
   #   taskfile: ~/setup/taskfiles/vscode.yaml
   #   aliases: [vs]
@@ -41,3 +46,4 @@ tasks:
     cmds:
       - task: chezmoi:apply
       - task: brew:bundle
+      - task: yes24:download
