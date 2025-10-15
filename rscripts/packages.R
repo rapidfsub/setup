@@ -4,11 +4,13 @@ if (!requireNamespace("pak", quietly = TRUE)) {
   install.packages("pak")
 }
 
-packages = c(
+packages <- c(
   "ggplot2",
   "languageserver",
   "rmarkdown",
-  "purrr"
+  "purrr",
+  "stopwords",
+  "textstem"
 )
 
 pak::pkg_install(packages)
