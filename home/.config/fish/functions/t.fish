@@ -1,3 +1,3 @@
 function t
-  task $argv
+    task $argv
 end
