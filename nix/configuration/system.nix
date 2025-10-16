@@ -18,4 +18,18 @@
     static-only = true;
     tilesize = 48;
   };
+
+  system.defaults.NSGlobalDomain = {
+    AppleICUForce24HourTime = true;
+    ApplePressAndHoldEnabled = false;
+    AppleShowAllExtensions = true;
+    # from 15 to 120
+    InitialKeyRepeat = 15;
+    # from 2 to 120
+    KeyRepeat = 1;
+    NSAutomaticCapitalizationEnabled = false;
+    NSAutomaticDashSubstitutionEnabled = false;
+    NSAutomaticPeriodSubstitutionEnabled = false;
+    NSAutomaticSpellingCorrectionEnabled = false;
+  };
 }
