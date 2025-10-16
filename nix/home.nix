@@ -1,16 +1,16 @@
 {
   # config,
   # pkgs,
+  system,
   user,
   home,
-  platform,
   ...
 }:
 
 {
   imports = [
     ./home/packages.nix
-    ./home/${platform}.nix
+    ./home/${system}.nix
   ];
 
   # Home Manager needs a bit of information about you and the

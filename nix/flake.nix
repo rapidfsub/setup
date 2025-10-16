@@ -21,10 +21,14 @@
         {
           system,
           user,
-          platform,
         }:
+
         let
           home = /Users/${user};
+
+          specialArgs = {
+            inherit system user home;
+          };
         in
         nix-darwin.lib.darwinSystem {
           inherit system;
@@ -39,19 +43,12 @@
 
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
-              home-manager.extraSpecialArgs = {
-                inherit user home platform;
-              };
+              home-manager.extraSpecialArgs = specialArgs;
             }
           ];
 
-          specialArgs = {
-            inherit
-              self
-              system
-              user
-              home
-              ;
+          specialArgs = specialArgs // {
+            inherit self;
           };
         };
     in
@@ -59,13 +56,11 @@
       darwinConfigurations.arm64 = darwinSystem {
         system = "aarch64-darwin";
         user = "minsub";
-        platform = "arm64";
       };
 
       darwinConfigurations.x86_64 = darwinSystem {
         system = "x86_64-darwin";
         user = "minsub";
-        platform = "x86_64";
       };
     };
 }
