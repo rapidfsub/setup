@@ -5,45 +5,10 @@ includes:
     taskfile: ~/setup/taskfiles/brew.yaml
     aliases: [b]
     dir: ~/setup
-
-  chezmoi:
-    taskfile: ~/setup/taskfiles/chezmoi.yaml
-    aliases: [c]
-    dir: ~/setup
-
-  nix:
-    taskfile: ~/setup/taskfiles/nix.yaml
-    aliases: [n]
-    dir: ~/setup
-
-  ssh:
-    taskfile: ~/setup/taskfiles/ssh.yaml
-    aliases: [s]
-    dir: ~/setup
-
-  r:
-    taskfile: ~/setup/taskfiles/r.yaml
-    aliases: [r]
-    dir: ~/setup
-
-  yes24:
-    taskfile: ~/setup/taskfiles/yes24.yaml
-    aliases: [y]
-    dir: ~/setup
-
-  # vscode:
-  #   taskfile: ~/setup/taskfiles/vscode.yaml
-  #   aliases: [vs]
-  #   dir: ~/setup
-
-  mix:
-    taskfile: ~/setup/taskfiles/mix.yaml
-    flatten: true
-
-tasks:
-  setup:
-    aliases: [s]
-    cmds:
-      - task: chezmoi:apply
-      - task: brew:bundle
-      - task: yes24:download
+# tasks:
+#   setup:
+#     aliases: [s]
+#     cmds:
+#       - task: chezmoi:apply
+#       - task: brew:bundle
+#       - task: yes24:download

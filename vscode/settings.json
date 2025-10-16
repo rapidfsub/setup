@@ -30,7 +30,9 @@
   "files.associations": {
     "*.css": "tailwindcss",
     "*.heex": "phoenix-heex",
+    "*.just": "just",
     "*.mjml.eex": "mjml",
+    "justfile": "just",
     "renv.lock": "json"
   },
   "files.autoSave": "onFocusChange",

@@ -1,0 +1,6 @@
+import '~/setup/justfiles/brew.just'
+import '~/setup/justfiles/chezmoi.just'
+import '~/setup/justfiles/mix.just'
+import '~/setup/justfiles/nix.just'
+import '~/setup/justfiles/r.just'
+import '~/setup/justfiles/yes24.just'
