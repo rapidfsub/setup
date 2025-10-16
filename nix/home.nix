@@ -10,6 +10,8 @@
 {
   imports = [
     ./home/packages.nix
+    ./home/fish.nix
+    ./home/programs.nix
     ./home/${system}.nix
   ];
 
@@ -30,41 +32,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  home.sessionPath = [
-    "/Applications/Postgres.app/Contents/Versions/latest/bin"
-  ];
-
-  programs.btop.enable = true;
-  programs.direnv.enable = true;
-  programs.lazygit.enable = true;
-  programs.tealdeer.enable = true;
-
-  programs.fish = {
-    enable = true;
-
-    shellInitLast = ''
-      . $HOME/.config/fish/shell_init_last.fish
-    '';
-  };
-
-  programs.eza = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  programs.fzf = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
-  };
 }

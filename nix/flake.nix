@@ -16,6 +16,7 @@
       nix-darwin,
       ...
     }:
+
     let
       darwinSystem =
         {
@@ -24,10 +25,9 @@
         }:
 
         let
-          home = /Users/${user};
-
           specialArgs = {
-            inherit system user home;
+            inherit system user;
+            home = /Users/${user};
           };
         in
         nix-darwin.lib.darwinSystem {
