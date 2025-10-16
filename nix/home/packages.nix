@@ -6,16 +6,22 @@
 {
   home.packages = with pkgs; [
     chezmoi
+
+    # git
+    git-delete-merged-branches
+    git-lfs
+
+    # nix
+    nixd
+    nixfmt
+
     dotenvx
     fd
     flyctl
     gdu
     ghostscript
     go-task
-    git-delete-merged-branches
-    git-lfs
-    nixd
-    nixfmt
+    just
     ripgrep
     yq
   ];
