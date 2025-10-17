@@ -32,7 +32,7 @@ mix-deps-clean-get-compile args:
   mix deps.compile {{args}}
 
 [no-cd]
-mix-deps-get args:
+mix-deps-get *args:
   mix deps.get {{args}}
 
 [no-cd]

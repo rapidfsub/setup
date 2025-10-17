@@ -1,14 +1,1 @@
 version: "3"
-
-includes:
-  brew:
-    taskfile: ~/setup/taskfiles/brew.yaml
-    aliases: [b]
-    dir: ~/setup
-# tasks:
-#   setup:
-#     aliases: [s]
-#     cmds:
-#       - task: chezmoi:apply
-#       - task: brew:bundle
-#       - task: yes24:download

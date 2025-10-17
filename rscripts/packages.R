@@ -10,7 +10,8 @@ packages <- c(
   "rmarkdown",
   "purrr",
   "stopwords",
-  "textstem"
+  "textstem",
+  "tidytext"
 )
 
 pak::pkg_install(packages)
