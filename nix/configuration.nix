@@ -8,12 +8,6 @@
 }:
 
 {
-  imports = [
-    ./configuration/determinate.nix
-    ./configuration/system.nix
-    ./configuration/launchd.nix
-  ];
-
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ ];
@@ -34,6 +28,12 @@
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = system;
 
+  imports = [
+    ./configuration/system.nix
+    ./configuration/launchd.nix
+  ];
+
+  nix.enable = false;
   users.users.${user}.home = home;
   security.pam.services.sudo_local.touchIdAuth = true;
 }

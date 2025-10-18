@@ -1,7 +1,0 @@
-{
-  ...
-}:
-
-{
-  nix.enable = false;
-}

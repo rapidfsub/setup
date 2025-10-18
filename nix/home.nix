@@ -8,13 +8,6 @@
 }:
 
 {
-  imports = [
-    ./home/packages.nix
-    ./home/fish.nix
-    ./home/programs.nix
-    ./home/${system}.nix
-  ];
-
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = user;
@@ -32,4 +25,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  imports = [
+    ./home/packages.nix
+    ./home/fish.nix
+    ./home/programs.nix
+    ./home/${system}.nix
+  ];
 }
