@@ -1,4 +1,5 @@
 brew "asdf"
+brew "jupyterlab"
 brew "mas"
 brew "r"
 cask "1password"
