@@ -6,12 +6,14 @@ if (!requireNamespace("pak", quietly = TRUE)) {
 
 packages <- c(
   "ggplot2",
+  "IRkernel",
   "languageserver",
   "rmarkdown",
   "purrr",
   "stopwords",
   "textstem",
-  "tidytext"
+  "tidytext",
+  "wordcloud"
 )
 
 pak::pkg_install(packages)
