@@ -4,6 +4,11 @@
 
 {
   launchd.agents = {
+    aerospace = {
+      command = "open -a Aerospace.app";
+      serviceConfig.RunAtLoad = true;
+    };
+
     hammerspoon = {
       command = "open -a Hammerspoon.app";
       serviceConfig.RunAtLoad = true;
