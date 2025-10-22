@@ -1,3 +1,5 @@
-hs.hotkey.bind({"ctrl", "shift"}, "W", function()
-  hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
-end)
+local FRemap = require("foundation_remapping")
+local remapper = FRemap.new()
+remapper:remap("CapsLock", "escape"):remap("escape", "CapsLock")
+
+remapper:register()
