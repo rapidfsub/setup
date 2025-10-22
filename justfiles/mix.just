@@ -4,6 +4,9 @@ alias mcf := mix-compile-force
 alias mdc := mix-deps-compile
 alias mdcg := mix-deps-clean-get-compile
 alias mdg := mix-deps-get
+alias mdu := mix-deps-update
+alias mdua := mix-deps-update-all
+alias mer := mix-ecto-reset
 alias mf := mix-format
 alias mps := mix-phx-server
 alias mt := mix-test
@@ -34,6 +37,18 @@ mix-deps-clean-get-compile args:
 [no-cd]
 mix-deps-get *args:
   mix deps.get {{args}}
+
+[no-cd]
+mix-deps-update *args:
+  mix deps.update {{args}}
+
+[no-cd]
+mix-deps-update-all:
+  mix deps.update --all
+
+[no-cd]
+mix-ecto-reset:
+  mix ecto.reset
 
 [no-cd]
 mix-format:

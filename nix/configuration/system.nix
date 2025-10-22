@@ -39,5 +39,6 @@
     NSAutomaticDashSubstitutionEnabled = false;
     NSAutomaticPeriodSubstitutionEnabled = false;
     NSAutomaticSpellingCorrectionEnabled = false;
+    "com.apple.keyboard.fnState" = true;
   };
 }
