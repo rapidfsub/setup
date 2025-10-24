@@ -10,6 +10,7 @@
     # git
     git-delete-merged-branches
     git-lfs
+    gh
 
     # nix
     nixd
