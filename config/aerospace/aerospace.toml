@@ -58,11 +58,35 @@ automatically-unhide-macos-hidden-apps = false
     outer.top =        0
     outer.right =      0
 
+[mode.normal.binding]
+    f1 = 'mode app'
+    f7 = 'focus left'
+    f8 = 'focus right'
+    f9 = 'layout h_tiles h_accordion'
+    f10 = 'mode normal'
+    f12 = ['reload-config', 'mode main']
+
+[mode.app.binding]
+    f1 = ['exec-and-forget open -a Cursor.app', 'mode normal']
+    f7 = 'focus left'
+    f8 = 'focus right'
+    f9 = 'layout h_tiles h_accordion'
+    f10 = 'mode normal'
+    f12 = ['reload-config', 'mode main']
+
+    f = ['exec-and-forget open -a Firefox.app', 'mode normal']
+    g = ['exec-and-forget open -a Ghostty.app', 'mode normal']
+
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
+    f7 = 'focus left'
+    f8 = 'focus right'
+    f9 = 'layout h_tiles h_accordion'
+    f10 = 'mode normal'
+    f12 = ['reload-config', 'mode main']
 
     # All possible keys:
     # - Letters.        a, b, c, ..., z
@@ -92,14 +116,14 @@ automatically-unhide-macos-hidden-apps = false
     # '''
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-    alt-slash = 'layout tiles horizontal vertical'
-    alt-comma = 'layout accordion horizontal vertical'
+    # alt-slash = 'layout tiles horizontal vertical'
+    # alt-comma = 'layout accordion horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-    alt-h = 'focus left'
-    alt-j = 'focus down'
-    alt-k = 'focus up'
-    alt-l = 'focus right'
+    # alt-h = 'focus left'
+    # alt-j = 'focus down'
+    # alt-k = 'focus up'
+    # alt-l = 'focus right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     alt-shift-h = 'move left'
