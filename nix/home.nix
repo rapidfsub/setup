@@ -29,7 +29,6 @@
   imports = [
     ./home/packages.nix
     ./home/fish.nix
-    ./home/programs.nix
     ./home/${system}.nix
   ];
 }
