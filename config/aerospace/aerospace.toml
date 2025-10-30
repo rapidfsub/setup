@@ -69,8 +69,34 @@ f8 = ['trigger-binding --mode app c', 'mode normal']
 
 alt-f7 = ['trigger-binding --mode layout r', 'mode normal']
 alt-f8 = ['trigger-binding --mode layout t', 'mode normal']
-alt-f10 = ['trigger-binding --mode layout 9', 'mode normal']
-alt-f11 = ['trigger-binding --mode layout 0', 'mode normal']
+
+alt-f9 = [
+  'trigger-binding --mode app c',
+  'trigger-binding --mode app f',
+  'trigger-binding --mode app g',
+  'mode normal',
+]
+
+alt-f10 = [
+  'exec-and-forget aerospace list-windows --all | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 1 --window-id _',
+  'move-workspace-to-monitor secondary --workspace 3',
+  'move-workspace-to-monitor main --workspace 2',
+  'move-workspace-to-monitor main --workspace 1',
+  'trigger-binding --mode layout 3',
+  'trigger-binding --mode layout 1',
+  'mode normal',
+]
+
+alt-f11 = [
+  'exec-and-forget aerospace list-windows --all | grep "Cursor" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 2 --window-id _',
+  'exec-and-forget aerospace list-windows --all | grep "Firefox" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 2 --window-id _',
+  'exec-and-forget aerospace list-windows --all | grep "Atlas" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 3 --window-id _',
+  'exec-and-forget aerospace list-windows --all | grep "Ghostty" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 3 --window-id _',
+  'trigger-binding --mode layout 3',
+  'trigger-binding --mode layout 2',
+  'mode normal',
+]
+
 alt-f12 = ['reload-config', 'mode main']
 
 [mode.layout.binding]
@@ -84,6 +110,7 @@ f8 = 'trigger-binding --mode normal f8'
 
 alt-f7 = 'trigger-binding --mode normal alt-f7'
 alt-f8 = 'trigger-binding --mode normal alt-f8'
+alt-f9 = 'trigger-binding --mode normal alt-f9'
 alt-f10 = 'trigger-binding --mode normal alt-f10'
 alt-f11 = 'trigger-binding --mode normal alt-f11'
 alt-f12 = 'trigger-binding --mode normal alt-f12'
@@ -108,24 +135,6 @@ b = 'balance-sizes'
 minus = 'resize smart -50'
 equal = 'resize smart +50'
 
-9 = [
-  'exec-and-forget aerospace list-windows --all | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 1 --window-id _',
-  'move-workspace-to-monitor secondary --workspace 3',
-  'move-workspace-to-monitor main --workspace 2',
-  'move-workspace-to-monitor main --workspace 1',
-  'trigger-binding --mode layout 3',
-  'trigger-binding --mode layout 1',
-]
-
-0 = [
-  'exec-and-forget aerospace list-windows --all | grep "Cursor" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 2 --window-id _',
-  'exec-and-forget aerospace list-windows --all | grep "Firefox" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 2 --window-id _',
-  'exec-and-forget aerospace list-windows --all | grep "Atlas" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 3 --window-id _',
-  'exec-and-forget aerospace list-windows --all | grep "Ghostty" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 3 --window-id _',
-  'trigger-binding --mode layout 3',
-  'trigger-binding --mode layout 2',
-]
-
 [mode.app.binding]
 f1 = 'trigger-binding --mode normal f1'
 f2 = 'trigger-binding --mode normal f2'
@@ -137,6 +146,7 @@ f8 = 'trigger-binding --mode normal f8'
 
 alt-f7 = 'trigger-binding --mode normal alt-f7'
 alt-f8 = 'trigger-binding --mode normal alt-f8'
+alt-f9 = 'trigger-binding --mode normal alt-f9'
 alt-f10 = 'trigger-binding --mode normal alt-f10'
 alt-f11 = 'trigger-binding --mode normal alt-f11'
 alt-f12 = 'trigger-binding --mode normal alt-f12'
@@ -157,6 +167,7 @@ comma = ['exec-and-forget open -a Finder.app', 'mode normal']
 [mode.main.binding]
 f1 = 'trigger-binding --mode normal f1'
 
+alt-f9 = 'trigger-binding --mode normal alt-f9'
 alt-f10 = 'trigger-binding --mode normal alt-f10'
 alt-f11 = 'trigger-binding --mode normal alt-f11'
 alt-f12 = 'trigger-binding --mode normal alt-f12'
