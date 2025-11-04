@@ -72,8 +72,8 @@ alt-f8 = ['trigger-binding --mode layout t', 'mode normal']
 
 alt-f9 = [
   'trigger-binding --mode app c',
-  'trigger-binding --mode app f',
   'trigger-binding --mode app g',
+  'trigger-binding --mode app t',
   'mode normal',
 ]
 
@@ -157,6 +157,7 @@ g = ['exec-and-forget open -a Ghostty.app', 'mode normal']
 k = ['exec-and-forget open -a KakaoTalk.app', 'mode normal']
 n = ['exec-and-forget open -a Notion.app', 'mode normal']
 s = ['exec-and-forget open -a "System Settings.app"', 'mode normal']
+t = ['exec-and-forget open -a TablePlus.app', 'mode normal']
 v = ['exec-and-forget open -a Cursor.app', 'mode normal']
 comma = ['exec-and-forget open -a Finder.app', 'mode normal']
 
