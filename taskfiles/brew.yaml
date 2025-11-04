@@ -4,12 +4,12 @@ tasks:
   dump-mas:
     aliases: [dm]
     cmds:
-      - brew bundle dump --file=./brewfiles/mas/Brewfile --mas --force
+      - brew bundle dump --file=~/setup/brewfiles/mas/Brewfile --mas --force
 
   bundle-mas:
     aliases: [bm]
     cmds:
-      - brew bundle --file=./brewfiles/mas/Brewfile
+      - brew bundle --file=~/setup/brewfiles/mas/Brewfile
 
   install-mas:
     aliases: [im]
@@ -20,12 +20,12 @@ tasks:
   bundle:
     aliases: [b]
     cmds:
-      - brew bundle --file=./brewfiles/Brewfile --cleanup --zap
+      - brew bundle --file=~/setup/brewfiles/Brewfile --cleanup --zap
 
   dump:
     aliases: [d]
     cmds:
-      - brew bundle dump --file=./brewfiles/Brewfile --formula --cask --tap --force
+      - brew bundle dump --file=~/setup/brewfiles/Brewfile --formula --cask --tap --force
 
   install:
     aliases: [i]

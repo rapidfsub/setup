@@ -17,3 +17,5 @@ if not contains $_asdf_shims $PATH
     set -gx --prepend PATH $_asdf_shims
 end
 set --erase _asdf_shims
+
+export XDG_CONFIG_HOME="$HOME/.config"

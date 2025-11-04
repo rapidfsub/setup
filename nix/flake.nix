@@ -16,11 +16,19 @@
       nix-darwin,
       ...
     }:
+
     let
       darwinSystem =
-        { system, user }:
+        {
+          system,
+          user,
+        }:
+
         let
-          home = /Users/${user};
+          specialArgs = {
+            inherit system user;
+            home = /Users/${user};
+          };
         in
         nix-darwin.lib.darwinSystem {
           inherit system;
@@ -32,22 +40,16 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.${user} = ./home.nix;
+              home-manager.backupFileExtension = "backup";
 
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
-              home-manager.extraSpecialArgs = {
-                inherit user home;
-              };
+              home-manager.extraSpecialArgs = specialArgs;
             }
           ];
 
-          specialArgs = {
-            inherit
-              self
-              system
-              user
-              home
-              ;
+          specialArgs = specialArgs // {
+            inherit self;
           };
         };
     in

@@ -1,6 +1,18 @@
 {
+  "[dockercompose]": {
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
   "[elixir]": {
     "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[r]": {
+    "editor.defaultFormatter": "REditorSupport.r"
   },
   "diffEditor.codeLens": true,
   "editor.detectIndentation": false,
@@ -21,7 +33,10 @@
   "files.associations": {
     "*.css": "tailwindcss",
     "*.heex": "phoenix-heex",
-    "*.mjml.eex": "mjml"
+    "*.just": "just",
+    "*.mjml.eex": "mjml",
+    "justfile": "just",
+    "renv.lock": "json"
   },
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
@@ -33,17 +48,9 @@
   "html.format.maxPreserveNewLines": 1,
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nixd",
+  "notebook.formatOnSave.enabled": true,
   "redhat.telemetry.enabled": false,
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.scrollback": 1000000,
-  "workbench.colorTheme": "Default Dark+",
-  "[dockercompose]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.autoIndent": "advanced",
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  }
+  "workbench.colorTheme": "Default Dark+"
 }

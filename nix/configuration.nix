@@ -1,9 +1,9 @@
 {
   self,
+  # pkgs,
   system,
   user,
   home,
-  # pkgs,
   ...
 }:
 
@@ -16,7 +16,7 @@
   nix.settings.experimental-features = "nix-command flakes";
 
   # Enable alternative shell support in nix-darwin.
-  # programs.fish.enable = true;
+  programs.fish.enable = true;
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -28,34 +28,12 @@
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = system;
 
+  imports = [
+    ./configuration/system.nix
+    ./configuration/launchd.nix
+  ];
+
   nix.enable = false;
   users.users.${user}.home = home;
-  programs.fish.enable = true;
   security.pam.services.sudo_local.touchIdAuth = true;
-  system.primaryUser = user;
-
-  system.defaults.dock = {
-    autohide = true;
-    mru-spaces = false;
-    orientation = "left";
-    persistent-apps = [ ];
-    persistent-others = [ ];
-    show-process-indicators = false;
-    show-recents = false;
-    showhidden = true;
-    static-only = true;
-    tilesize = 48;
-  };
-
-  launchd.agents = {
-    linearMouse = {
-      command = "open -a LinearMouse.app";
-      serviceConfig.RunAtLoad = true;
-    };
-
-    postgres = {
-      command = "open -a Postgres.app";
-      serviceConfig.RunAtLoad = true;
-    };
-  };
 }

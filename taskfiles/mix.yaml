@@ -1,6 +1,11 @@
 version: "3"
 
 tasks:
+  archive.install-hex:
+    aliases: [mai]
+    cmds:
+      - mix archive.install hex {{.CLI_ARGS}}
+
   compile:
     dir: "{{.USER_WORKING_DIR}}"
     aliases: [mc]
