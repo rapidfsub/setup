@@ -67,17 +67,16 @@ f6 = ['trigger-binding --mode app g', 'mode normal']
 f7 = ['trigger-binding --mode app f', 'mode normal']
 f8 = ['trigger-binding --mode app c', 'mode normal']
 
-alt-f7 = ['trigger-binding --mode layout r', 'mode normal']
-alt-f8 = ['trigger-binding --mode layout t', 'mode normal']
+alt-f1 = ['reload-config', 'mode main']
 
-alt-f9 = [
+alt-f2 = [
   'trigger-binding --mode app c',
   'trigger-binding --mode app g',
   'trigger-binding --mode app t',
   'mode normal',
 ]
 
-alt-f10 = [
+alt-f3 = [
   'exec-and-forget aerospace list-windows --all | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 1 --window-id _',
   'move-workspace-to-monitor secondary --workspace 3',
   'move-workspace-to-monitor main --workspace 2',
@@ -87,7 +86,7 @@ alt-f10 = [
   'mode normal',
 ]
 
-alt-f11 = [
+alt-f4 = [
   'exec-and-forget aerospace list-windows --all | grep "Cursor" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 2 --window-id _',
   'exec-and-forget aerospace list-windows --all | grep "Firefox" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 2 --window-id _',
   'exec-and-forget aerospace list-windows --all | grep "Atlas" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 3 --window-id _',
@@ -97,7 +96,19 @@ alt-f11 = [
   'mode normal',
 ]
 
-alt-f12 = ['reload-config', 'mode main']
+alt-f5 = 'balance-sizes'
+alt-f7 = 'resize smart +50'
+alt-f8 = 'layout h_accordion h_tiles'
+shift-alt-f7 = 'resize smart -50'
+shift-alt-f8 = 'layout v_accordion v_tiles'
+
+alt-f9 = 'focus dfs-next --boundaries-action wrap-around-the-workspace'
+alt-f10 = 'workspace --wrap-around next'
+alt-f11 = 'move-node-to-workspace --wrap-around --focus-follows-window next'
+alt-f12 = 'move-node-to-monitor --focus-follows-window --wrap-around next'
+shift-alt-f9 = 'focus dfs-prev --boundaries-action wrap-around-the-workspace'
+shift-alt-f10 = 'workspace --wrap-around prev'
+shift-alt-f11 = 'move-node-to-workspace --wrap-around --focus-follows-window prev'
 
 [mode.layout.binding]
 f1 = 'trigger-binding --mode normal f1'
@@ -108,32 +119,28 @@ f6 = 'trigger-binding --mode normal f6'
 f7 = 'trigger-binding --mode normal f7'
 f8 = 'trigger-binding --mode normal f8'
 
+alt-f1 = 'trigger-binding --mode normal alt-f1'
+alt-f2 = 'trigger-binding --mode normal alt-f2'
+alt-f3 = 'trigger-binding --mode normal alt-f3'
+alt-f4 = 'trigger-binding --mode normal alt-f4'
+
+alt-f5 = 'trigger-binding --mode normal alt-f5'
 alt-f7 = 'trigger-binding --mode normal alt-f7'
 alt-f8 = 'trigger-binding --mode normal alt-f8'
+shift-alt-f7 = 'trigger-binding --mode normal shift-alt-f7'
+shift-alt-f8 = 'trigger-binding --mode normal shift-alt-f8'
+
 alt-f9 = 'trigger-binding --mode normal alt-f9'
 alt-f10 = 'trigger-binding --mode normal alt-f10'
 alt-f11 = 'trigger-binding --mode normal alt-f11'
 alt-f12 = 'trigger-binding --mode normal alt-f12'
+shift-alt-f9 = 'trigger-binding --mode normal shift-alt-f9'
+shift-alt-f10 = 'trigger-binding --mode normal shift-alt-f10'
+shift-alt-f11 = 'trigger-binding --mode normal shift-alt-f11'
 
 1 = 'workspace 1'
 2 = 'workspace 2'
 3 = 'workspace 3'
-
-q = 'move-node-to-workspace 1'
-w = 'move-node-to-workspace 2'
-e = 'move-node-to-workspace 3'
-r = 'layout h_accordion v_accordion'
-t = 'layout h_tiles v_tiles'
-
-h = 'focus left'
-j = 'focus down'
-k = 'focus up'
-l = 'focus right'
-
-b = 'balance-sizes'
-
-minus = 'resize smart -50'
-equal = 'resize smart +50'
 
 [mode.app.binding]
 f1 = 'trigger-binding --mode normal f1'
@@ -144,12 +151,24 @@ f6 = 'trigger-binding --mode normal f6'
 f7 = 'trigger-binding --mode normal f7'
 f8 = 'trigger-binding --mode normal f8'
 
+alt-f1 = 'trigger-binding --mode normal alt-f1'
+alt-f2 = 'trigger-binding --mode normal alt-f2'
+alt-f3 = 'trigger-binding --mode normal alt-f3'
+alt-f4 = 'trigger-binding --mode normal alt-f4'
+
+alt-f5 = 'trigger-binding --mode normal alt-f5'
 alt-f7 = 'trigger-binding --mode normal alt-f7'
 alt-f8 = 'trigger-binding --mode normal alt-f8'
+shift-alt-f7 = 'trigger-binding --mode normal shift-alt-f7'
+shift-alt-f8 = 'trigger-binding --mode normal shift-alt-f8'
+
 alt-f9 = 'trigger-binding --mode normal alt-f9'
 alt-f10 = 'trigger-binding --mode normal alt-f10'
 alt-f11 = 'trigger-binding --mode normal alt-f11'
 alt-f12 = 'trigger-binding --mode normal alt-f12'
+shift-alt-f9 = 'trigger-binding --mode normal shift-alt-f9'
+shift-alt-f10 = 'trigger-binding --mode normal shift-alt-f10'
+shift-alt-f11 = 'trigger-binding --mode normal shift-alt-f11'
 
 c = ['exec-and-forget open -b com.openai.atlas', 'mode normal']
 f = ['exec-and-forget open -a Firefox.app', 'mode normal']
@@ -168,10 +187,10 @@ comma = ['exec-and-forget open -a Finder.app', 'mode normal']
 [mode.main.binding]
 f1 = 'trigger-binding --mode normal f1'
 
-alt-f9 = 'trigger-binding --mode normal alt-f9'
-alt-f10 = 'trigger-binding --mode normal alt-f10'
-alt-f11 = 'trigger-binding --mode normal alt-f11'
-alt-f12 = 'trigger-binding --mode normal alt-f12'
+alt-f1 = 'trigger-binding --mode normal alt-f1'
+alt-f2 = 'trigger-binding --mode normal alt-f2'
+alt-f3 = 'trigger-binding --mode normal alt-f3'
+alt-f4 = 'trigger-binding --mode normal alt-f4'
 
 # All possible keys:
 # - Letters.        a, b, c, ..., z
