@@ -22,6 +22,7 @@ in
     nixd
     nixfmt
 
+    doggo
     dotenvx
     fd
     flyctl
