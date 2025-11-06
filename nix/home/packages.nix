@@ -12,6 +12,7 @@ in
 {
   home.packages = with pkgs; [
     chezmoi
+    lazygit
 
     # git
     git-delete-merged-branches
@@ -36,7 +37,7 @@ in
 
   programs.btop.enable = true;
   programs.direnv.enable = true;
-  programs.lazygit.enable = true;
+  # programs.lazygit.enable = true;
   programs.tealdeer.enable = true;
 
   programs.eza = enableFishIntegration true;
