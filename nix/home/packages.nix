@@ -12,7 +12,7 @@ in
 {
   home.packages = with pkgs; [
     chezmoi
-    lazygit
+    exercism
 
     # git
     git-delete-merged-branches
@@ -22,6 +22,10 @@ in
     # nix
     nixd
     nixfmt
+
+    # typescript
+    biome
+    yarn-berry
 
     doggo
     dotenvx
@@ -37,7 +41,7 @@ in
 
   programs.btop.enable = true;
   programs.direnv.enable = true;
-  # programs.lazygit.enable = true;
+  programs.lazygit.enable = true;
   programs.tealdeer.enable = true;
 
   programs.eza = enableFishIntegration true;
