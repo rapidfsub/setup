@@ -14,6 +14,14 @@
   "[r]": {
     "editor.defaultFormatter": "REditorSupport.r"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "cursor.cpp.disabledLanguages": [
+    "markdown",
+    "plaintext",
+    "typescript"
+  ],
   "diffEditor.codeLens": true,
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
