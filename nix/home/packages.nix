@@ -36,6 +36,8 @@ in
     go-task
     just
     ripgrep
+    typescript
+    wakatime-cli
     yq
   ];
 
