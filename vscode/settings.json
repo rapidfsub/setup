@@ -20,7 +20,8 @@
   "cursor.cpp.disabledLanguages": [
     "markdown",
     "plaintext",
-    "typescript"
+    "typescript",
+    "r"
   ],
   "diffEditor.codeLens": true,
   "editor.detectIndentation": false,
