@@ -5,6 +5,7 @@ if (!requireNamespace("pak", quietly = TRUE)) {
 }
 
 packages <- c(
+  "corrplot",
   "dplyr",
   "ggplot2",
   "httr",
@@ -12,6 +13,7 @@ packages <- c(
   "languageserver",
   "rmarkdown",
   "purrr",
+  "rpart",
   "rvest",
   "stopwords",
   "textstem",
@@ -22,3 +24,6 @@ packages <- c(
 
 pak::pkg_install(packages)
 IRkernel::installspec()
+
+pak::repo_add("http://datacube.wu.ac.at")
+pak::pkg_install("tm.corpus.Reuters21578")
