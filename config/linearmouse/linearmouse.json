@@ -31,6 +31,22 @@
           "vertical" : false
         }
       }
+    },
+    {
+      "if" : {
+        "app" : "com.utmapp.UTM",
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0x2c8a",
+          "productName" : "ROCCAT Kone Pro Air",
+          "vendorID" : "0x1e7d"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : false
+        }
+      }
     }
   ]
 }

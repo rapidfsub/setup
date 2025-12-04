@@ -12,6 +12,7 @@ in
 {
   home.packages = with pkgs; [
     chezmoi
+    exercism
 
     # git
     git-delete-merged-branches
@@ -22,6 +23,11 @@ in
     nixd
     nixfmt
 
+    # typescript
+    biome
+    yarn-berry
+
+    doggo
     dotenvx
     fd
     flyctl
@@ -30,6 +36,8 @@ in
     go-task
     just
     ripgrep
+    typescript
+    wakatime-cli
     yq
   ];
 
