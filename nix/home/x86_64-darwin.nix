@@ -1,10 +1,10 @@
 {
-  pkgs,
+  # pkgs,
   ...
 }:
 
 {
-  home.packages = with pkgs; [
-    typos
-  ];
+  # home.packages = with pkgs; [
+  #   typos
+  # ];
 }
