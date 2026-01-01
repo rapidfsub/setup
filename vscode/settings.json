@@ -17,6 +17,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "cursor.composer.usageSummaryDisplay": "always",
   "cursor.cpp.disabledLanguages": [
     "markdown",
     "plaintext",

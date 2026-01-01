@@ -1,5 +1,8 @@
 # version: 1.0.0
 
+# Executing command "/Users/minsub/.asdf/shims/elixir" timed out.
+command_timeout = 1000
+
 add_newline = true
 continuation_prompt = "[▸▹ ](dimmed white)"
 

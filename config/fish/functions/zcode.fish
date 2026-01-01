@@ -5,6 +5,7 @@ function zcode
         pushd .
         cd $argv
         or z $argv
+        direnv export fish | source
         and $_flag_command (ls | rg -m 1 '.code-workspace' || echo '.')
         popd
     end &>/dev/null
