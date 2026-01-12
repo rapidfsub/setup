@@ -1,7 +1,7 @@
 alias gm := mix-ash-codegen
-alias rr := rift-redemo
-alias rdd := rift-demo-dump
-alias rdr := rift-demo-restore
+alias rr := rift-resample
+alias rrd := rift-sample-dump
+alias rrr := rift-sample-restore
 alias rsw := run-server-worker
 alias rbs := run-bard-server
 alias rbw := run-bard-worker
@@ -11,16 +11,16 @@ mix-ash-codegen args:
   mix ash.codegen {{args}}
 
 [no-cd]
-rift-redemo:
-  mix rift.redemo
+rift-resample:
+  mix rift.resample
 
 [no-cd]
-rift-demo-dump: rift-redemo
-  mix rift.demo.dump
+rift-sample-dump: rift-resample
+  mix rift.sample.dump
 
 [no-cd]
-rift-demo-restore:
-  mix rift.demo.restore
+rift-sample-restore:
+  mix rift.sample.restore
 
 [no-cd]
 run-server-worker:
