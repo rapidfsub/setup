@@ -1,5 +1,6 @@
-erlang 27.3
-elixir 1.18.3-otp-27
+erlang 28.3
+elixir 1.19.5-otp-28
 pnpm 10.17.0
 nodejs 22.0.0
-typos 1.40.0
+typos 1.42.0
+dotenvx 1.51.4

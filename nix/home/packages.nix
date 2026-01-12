@@ -28,12 +28,12 @@ in
     yarn-berry
 
     doggo
-    dotenvx
     fd
     flyctl
     gdu
     ghostscript
     go-task
+    imagemagick
     just
     ripgrep
     typescript
