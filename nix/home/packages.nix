@@ -27,6 +27,7 @@ in
     biome
     yarn-berry
 
+    cloudflared
     doggo
     fd
     flyctl
@@ -35,6 +36,7 @@ in
     go-task
     imagemagick
     just
+    pnpm
     ripgrep
     typescript
     wakatime-cli
