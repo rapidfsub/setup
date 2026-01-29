@@ -8,7 +8,7 @@ alias dbw := devall-bard-worker
 
 [no-cd]
 devall-rift-resample:
-  ENABLE_WEB=false ENABLE_WORKER=true mix rift.resample
+  ENABLE_WEB=true ENABLE_WORKER=true mix rift.resample
 
 [no-cd]
 devall-rift-reseed:
