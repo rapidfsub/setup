@@ -27,14 +27,16 @@ in
     biome
     yarn-berry
 
+    cloudflared
     doggo
-    dotenvx
     fd
     flyctl
     gdu
     ghostscript
     go-task
+    imagemagick
     just
+    pnpm
     ripgrep
     typescript
     wakatime-cli

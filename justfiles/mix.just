@@ -6,10 +6,13 @@ alias mdcg := mix-deps-clean-get-compile
 alias mdg := mix-deps-get
 alias mdu := mix-deps-update
 alias mdua := mix-deps-update-all
-alias mer := mix-ecto-reset
 alias mf := mix-format
+
+alias mg := mix-ash-codegen
+alias mer := mix-ecto-reset
 alias mps := mix-phx-server
 alias mt := mix-test
+
 alias im := iex-mix
 alias imps := iex-mix-phx-server
 
@@ -47,12 +50,16 @@ mix-deps-update-all:
   mix deps.update --all
 
 [no-cd]
-mix-ecto-reset:
-  mix ecto.reset
-
-[no-cd]
 mix-format:
   mix format
+
+[no-cd]
+mix-ash-codegen args:
+  mix ash.codegen {{args}}
+
+[no-cd]
+mix-ecto-reset:
+  mix ecto.reset
 
 [no-cd]
 mix-phx-server:
