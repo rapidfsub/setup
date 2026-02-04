@@ -203,7 +203,7 @@ k = ['exec-and-forget open -a KakaoTalk.app', 'mode normal']
 n = ['exec-and-forget open -a Notion.app', 'mode normal']
 s = ['exec-and-forget open -a "System Settings.app"', 'mode normal']
 t = ['exec-and-forget open -a TablePlus.app', 'mode normal']
-v = ['exec-and-forget open -a "Visual Studio Code.app"', 'mode normal']
+v = ['exec-and-forget open -a "Cursor.app"', 'mode normal']
 comma = ['exec-and-forget open -a Finder.app', 'mode normal']
 
 # 'main' binding mode declaration
