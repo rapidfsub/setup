@@ -9,8 +9,8 @@
       serviceConfig.RunAtLoad = true;
     };
 
-    hammerspoon = {
-      command = "open -a Hammerspoon.app";
+    docker = {
+      command = "open -a Docker.app";
       serviceConfig.RunAtLoad = true;
     };
 
