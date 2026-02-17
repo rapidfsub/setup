@@ -1,6 +1,7 @@
 tap "dotenvx/brew"
 tap "nikitabobko/tap"
 brew "asdf"
+brew "happy-coder"
 brew "jupyterlab"
 brew "mas"
 brew "r"
