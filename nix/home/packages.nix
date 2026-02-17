@@ -37,6 +37,7 @@ in
     imagemagick
     just
     pnpm
+    restic
     ripgrep
     typescript
     wakatime-cli
