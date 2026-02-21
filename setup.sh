@@ -27,7 +27,7 @@ fi
 sudo -v
 
 # nix-darwin
-sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#$(uname -m)
+sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake ./nix#$(uname -m)
 set +u
 . /etc/bashrc
 sudo -v
@@ -43,4 +43,4 @@ if ! command -v brew &>/dev/null; then
   eval "$($BREW shellenv)"
 fi
 
-task setup
+just setup
