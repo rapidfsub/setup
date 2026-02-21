@@ -6,7 +6,7 @@ alias bmd := brew-mas-dump
 alias bmi := brew-mas-install
 
 brew-bundle:
-  brew bundle --file=~/setup/brewfiles/Brewfile --cleanup --zap
+  brew bundle --file=~/setup/brewfiles/Brewfile --cleanup --zap --verbose
 
 brew-dump:
   brew bundle dump --file=~/setup/brewfiles/Brewfile --formula --cask --tap --force
