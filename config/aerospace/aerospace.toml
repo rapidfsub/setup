@@ -65,7 +65,7 @@ f3 = 'mode layout'
 f5 = ['trigger-binding --mode app v', 'mode normal']
 f6 = ['trigger-binding --mode app g', 'mode normal']
 f7 = ['trigger-binding --mode app f', 'mode normal']
-f8 = ['trigger-binding --mode app c', 'mode normal']
+# f8 = ['trigger-binding --mode app c', 'mode normal']
 
 alt-f1 = ['reload-config', 'mode main']
 
@@ -88,6 +88,7 @@ alt-f3 = [
 
 alt-f4 = [
   'exec-and-forget aerospace list-windows --all | grep "Cursor" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 2 --window-id _',
+  'exec-and-forget aerospace list-windows --all | grep "Code" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 2 --window-id _',
   'exec-and-forget aerospace list-windows --all | grep "Firefox" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 2 --window-id _',
   'exec-and-forget aerospace list-windows --all | grep "Atlas" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 3 --window-id _',
   'exec-and-forget aerospace list-windows --all | grep "Ghostty" | cut -w -f 1 | xargs -I _ aerospace move-node-to-workspace 3 --window-id _',
@@ -195,14 +196,13 @@ shift-alt-f10 = 'trigger-binding --mode normal shift-alt-f10'
 shift-alt-f11 = 'trigger-binding --mode normal shift-alt-f11'
 shift-alt-f12 = 'trigger-binding --mode normal shift-alt-f12'
 
-c = ['exec-and-forget open -b com.openai.atlas', 'mode normal']
 f = ['exec-and-forget open -a Firefox.app', 'mode normal']
 g = ['exec-and-forget open -a Ghostty.app', 'mode normal']
 k = ['exec-and-forget open -a KakaoTalk.app', 'mode normal']
 n = ['exec-and-forget open -a Notion.app', 'mode normal']
 s = ['exec-and-forget open -a "System Settings.app"', 'mode normal']
 t = ['exec-and-forget open -a TablePlus.app', 'mode normal']
-v = ['exec-and-forget open -a Cursor.app', 'mode normal']
+v = ['exec-and-forget open -a "Cursor.app"', 'mode normal']
 comma = ['exec-and-forget open -a Finder.app', 'mode normal']
 
 # 'main' binding mode declaration
