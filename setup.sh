@@ -17,6 +17,14 @@ sudo -v
 if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
   echo "nix already installed"
 else
+  if [[ -f /etc/bashrc ]]; then
+    sudo mv /etc/bashrc /etc/bashrc.before-nix-darwin
+  fi
+
+  if [[ -f /etc/zshrc ]]; then
+    sudo mv /etc/zshrc /etc/zshrc.before-nix-darwin
+  fi
+
   curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate --no-confirm
 fi
 
