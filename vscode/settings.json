@@ -71,5 +71,6 @@
   "redhat.telemetry.enabled": false,
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.scrollback": 1000000,
-  "workbench.activityBar.orientation": "vertical"
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.colorTheme": "Default Dark+"
 }
