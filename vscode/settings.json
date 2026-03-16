@@ -17,6 +17,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
+  "claudeCode.preferredLocation": "panel",
   "cursor.composer.usageSummaryDisplay": "always",
   "cursor.cpp.disabledLanguages": [
     "markdown",
@@ -56,12 +57,19 @@
   "git.openRepositoryInParentFolders": "always",
   "html.format.indentInnerHtml": true,
   "html.format.maxPreserveNewLines": 1,
+  "json.schemaDownload.trustedDomains": {
+    "https://biomejs.dev": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://www.schemastore.org/": true
+  },
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nixd",
   "notebook.formatOnSave.enabled": true,
   "redhat.telemetry.enabled": false,
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.scrollback": 1000000,
-  "workbench.colorTheme": "Bluloco Dark Italic",
-  "claudeCode.preferredLocation": "panel"
+  "workbench.activityBar.orientation": "vertical"
 }
