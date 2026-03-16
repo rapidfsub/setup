@@ -7,6 +7,7 @@ if (!requireNamespace("pak", quietly = TRUE)) {
 packages <- c(
   "corrplot",
   "dplyr",
+  "forecast",
   "ggplot2",
   "httr",
   "IRkernel",
@@ -18,6 +19,7 @@ packages <- c(
   "stopwords",
   "textstem",
   "tidytext",
+  "tseries",
   "wordcloud",
   "XML"
 )

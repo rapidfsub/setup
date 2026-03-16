@@ -19,3 +19,4 @@ end
 set --erase _asdf_shims
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$HOME/.opencode/bin:$PATH"
